@@ -42,7 +42,8 @@ app.put('/uploadpic',((req,res) => {uploadProfilePic.handleUpload(req,res,db)}))
 app.post('/sqcheck', ((req,res) => {sqCheck.handleSQCheck(req,res,db,bcrypt);}));
 app.put('/pwchange',(req,res) => pwChange.handlePWchange(req,res,db,bcrypt));
 
+const port = process.env.PORT || 3001;
 
-app.listen(process.env.PORT || 3001, () => {
-    console.log(`app is running on port ${process.env.PORT}`);
+app.listen(port, () => {
+    console.log(`app is running on port ${port}`);
 });

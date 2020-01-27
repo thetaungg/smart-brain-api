@@ -2,7 +2,7 @@ const Clarifai = require('clarifai');
 
 //to make it look nice // instead of writing in the element tab
 const app = new Clarifai.App({
-    apiKey: process.env.API_KEY_CLARIFAI
+    apiKey: process.env.API_KEY_CLARIFAI || '73f2c831ec9546b480b4899a8ee515bf'
 });
 const handleApiCall = (req,res) => {
     app.models.predict(Clarifai.FACE_DETECT_MODEL, req.body.input)
